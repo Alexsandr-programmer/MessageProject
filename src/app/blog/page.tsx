@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 // FETCH DATE WITH AN API -----------------
 const dataFetch = async (): Promise<Post[]> => {
-  const res = await fetch("http://localhost:3000/api/blog ", {
+  const res = await fetch(process.env.BLOG_API, {
     next: { revalidate: 3600 },
   });
 
