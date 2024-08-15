@@ -1,12 +1,8 @@
 import { Post } from "@/lib/models";
 import { connectToDb } from "@/lib/utils";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-interface Props {
-  request: Request;
-}
-
-export const GET = async (request: Props) => {
+export const GET = async (request: NextRequest) => {
   try {
     connectToDb();
 
