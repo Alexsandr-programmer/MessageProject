@@ -31,7 +31,7 @@ const links: Link[] = [
   },
 ];
 
-const Links = ({ session }) => {
+const Links = ({ session }: { session: any }) => {
   const [open, setOpen] = useState(false);
 
   // TEMPORARY

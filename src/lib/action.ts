@@ -6,7 +6,7 @@ import { connectToDb } from "./utils";
 import { signIn, signOut } from "./auth";
 import bcrypt from "bcrypt";
 
-export const addPost = async (prevState, formData: FormData) => {
+export const addPost = async (previousState: any, formData: FormData) => {
   console.log(formData);
   const { title, desc, slug, userId } = Object.fromEntries(formData);
 
@@ -43,7 +43,7 @@ export const deletePost = async (formData: FormData) => {
   }
 };
 
-export const addUser = async (prevState, formData: FormData) => {
+export const addUser = async (previousState: any, formData: FormData) => {
   const { username, email, password, img } = Object.fromEntries(formData);
 
   try {
@@ -87,7 +87,7 @@ export const handleLogout = async () => {
   await signOut();
 };
 
-export const register = async (previousState, formData: FormData) => {
+export const register = async (previousState: any, formData: FormData) => {
   const { username, email, password, passwordRepeat, img } = Object.fromEntries(
     formData
   ) as {
@@ -131,7 +131,7 @@ export const register = async (previousState, formData: FormData) => {
   }
 };
 
-export const login = async (previousState, formData: FormData) => {
+export const login = async (previousState: any, formData: FormData) => {
   const { username, password } = Object.fromEntries(formData);
 
   try {
