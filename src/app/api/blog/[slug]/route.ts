@@ -9,7 +9,7 @@ interface Props {
   };
 }
 
-export const GET = async (request, { params }: Props) => {
+export const GET = async (request: Request, { params }: Props) => {
   const { slug } = params;
   try {
     connectToDb();
