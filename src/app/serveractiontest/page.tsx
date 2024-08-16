@@ -3,7 +3,7 @@ import { addPost, deletePost } from "@/lib/action";
 const ServerActionTestPage = () => {
   return (
     <div>
-      <form action={addPost} method="POST">
+      <form onSubmit={() => addPost} method="POST">
         <input type="text" placeholder="title" name="title" />
         <input type="text" placeholder="desc" name="desc" />
         <input type="text" placeholder="slug" name="slug" />

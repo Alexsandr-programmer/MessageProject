@@ -23,7 +23,17 @@ const AdminPost = async () => {
             </span>
           </div>
           <form action={deletePost}>
-            <input type="hidden" name="id" value={post.id} />
+            <input
+              type="hidden"
+              name="id"
+              value={
+                post.id as unknown as
+                  | string
+                  | number
+                  | readonly string[]
+                  | undefined
+              }
+            />
             <button className={styles.postBtn}>Delete</button>
           </form>
         </div>
