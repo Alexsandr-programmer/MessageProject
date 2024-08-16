@@ -3,8 +3,9 @@
 import { useFormState } from "react-dom";
 import styles from "./adminPostForm.module.css";
 import { addPost } from "@/lib/action";
+import { User } from "next-auth";
 
-const AdminPostForm = ({ userId }) => {
+const AdminPostForm = ({ user }: { user: any }) => {
   const [state, formAction] = useFormState(addPost, undefined);
 
   return (
@@ -15,7 +16,7 @@ const AdminPostForm = ({ userId }) => {
           type="hidden"
           name="userId"
           placeholder="userId"
-          value={userId}
+          value={user.id}
         />
         <input type="text" name="title" placeholder="title" />
 

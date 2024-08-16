@@ -7,7 +7,7 @@ const AdminUsers = async () => {
 
   return (
     <div>
-      <h1>Posts</h1>
+      <h1>Users</h1>
       {users.map((user) => (
         <div key={user.username} className={styles.post}>
           <div className={styles.detail}>
@@ -20,7 +20,11 @@ const AdminUsers = async () => {
             <span className={styles.postTitle}>{user.username}</span>
           </div>
           <form action={deleteUser}>
-            <input type="hidden" name="id" value={user.id} />
+            <input
+              type="hidden"
+              name="id"
+              value={user.id as unknown as string}
+            />
             <button className={styles.postBtn}>Delete</button>
           </form>
         </div>

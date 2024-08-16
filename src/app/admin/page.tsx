@@ -5,9 +5,14 @@ import AdminPostForm from "@/components/adminPostForm/AdminPostForm";
 import AdminUsers from "@/components/adminUsers/AdminUsers";
 import AdminUserForm from "@/components/adminUserForm/AdminUserForm";
 import { auth } from "@/lib/auth";
+import { Session } from "next-auth";
 
 const AdminPage = async () => {
-  const session = await auth();
+  const session: Session | null = await auth();
+
+  if (!session) {
+    return <div>You must be logged in to view this page</div>;
+  }
 
   return (
     <div className={styles.container}>
@@ -18,7 +23,7 @@ const AdminPage = async () => {
           </Suspense>
         </div>
         <div className={styles.col}>
-          <AdminPostForm userId={session.user.id} />
+          <AdminPostForm user={session.user} />
         </div>
       </div>
 

@@ -23,7 +23,7 @@ const PostUser = async ({ userId }: Props) => {
   return (
     <div className={styles.container}>
       <Image
-        src={user.img || "./noavatar.png"}
+        src={user.img || "/noavatar.png"}
         alt="user photo"
         width={50}
         height={50}
